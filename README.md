@@ -1,1 +1,1 @@
-# a-novel-idea
+# a-novel-idea: Random Book Generator
