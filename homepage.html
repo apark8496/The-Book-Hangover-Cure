@@ -1,68 +1,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A Novel Idea: Book Generator</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-   <link rel="stylesheet" href="assets\css\homepage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="assets\css\homepage.css" />
 </head>
 
 <body>
-    <section class="hero is-success is-fullheight">
-        <div class="hero-head">
-            <header class="navbar">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <a class="navbar-item">
-                            <h1>A Novel Idea: Random Book Generator</h1>
-                        </a>
-                        <span class="navbar-burger" data-target="navbarMenuHeroC">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </div>
-                    <div id="navbarMenuHeroC" class="navbar-menu">
-                        <div class="navbar-end">
-                            <a class="navbar-item is-active">
-                                To Be Read List
-                            </a>
-                        </div>
-                    </div>
+    <!-- Navigation Bar -->
+    <section class="hero is medium is bold">
+        <nav class="navbar is-transparent">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item title is-2" href="#">A Novel Idea: Book Generator</a>
                 </div>
-            </header>
-        </div>
-
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <p class="title">
-                    In need of a book hangover cure? Search no further!
-                </p>
-                <p class="subtitle">
-                    Search by book or genre!
-                </p>
-                <div class="field has-addons" id="searchBar">
-                    <div class="control">
-                        <input class="input is-medium is-rounded" id="search" type="text" placeholder="Book Title">
-                    </div>
-                    <div class="control">
-                        <a class="button is-info is-rounded is-medium" id="searchBtn">
-                            Search
-                        </a>
+                <span class="navbar-burger burger" data-target="navbarMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <a class="subtitle is-5">To be Read Library</a>
                     </div>
                 </div>
             </div>
+        </nav>
         </div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="columns is-8 is-variable ">
+                    <div class="column is-two-thirds has-text-left">
+                        <h1 class="title is-2">Looking for a new book to cure your book hangover?</h1>
+                        <p class="is-size-4">Search by Book Title or by Genre</p>
+                        <div class="field has-addons" id="searchBar">
+                            <div class="control">
+                                <input class="input is-medium is-rounded" id="search" type="text"
+                                    placeholder="Book Title">
+                            </div>
+                            <div class="control">
+                                <a class="button is-info is-rounded is-medium" id="searchBtn">
+                                    Search
+                                </a>
+                            </div>
+                        </div>
 
-        <!-- Hero footer -->
-        <div class="hero-foot">
-            <nav class="tabs is-boxed is-fullwidth">
-                <div class="container">
-                </div>
-            </nav>
-        </div>
     </section>
 </body>
 
