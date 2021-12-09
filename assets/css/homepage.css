@@ -3,8 +3,9 @@ body {
   background-size: cover;
 }
 
+/* header Styles */
 #logo:hover {
-    color: #feada6;
+  color: #feada6;
 }
 
 #tbr a {
@@ -15,9 +16,15 @@ body {
 }
 
 #tbr a:hover {
-    color: #feada6;
-  }
+  color: #feada6;
+}
 
+/* Search Section Style */
+#aside {
+  background-color: #abbaab;
+  opacity: 75%;
+  border-radius: 15px;
+}
 
 .button {
   background-image: linear-gradient(
@@ -43,12 +50,6 @@ body {
   text-decoration: none;
 }
 
-#aside {
-  background-color: #abbaab;
-  opacity: 75%;
-  border-radius: 15px;
-}
-
 input[type="text"] {
   border-radius: 10px;
   width: 300px;
@@ -58,6 +59,7 @@ input[type="text"]:focus {
   background-color: #feada6;
 }
 
+/* Book Search Result Section */
 #book-div,
 #random-div {
   background-color: #abbaab;
