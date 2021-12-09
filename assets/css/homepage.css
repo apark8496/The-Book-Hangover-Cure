@@ -3,6 +3,18 @@ body {
   background-size: cover;
 }
 
+#tbr a {
+  background-color: #abbaab;
+  padding: 10px 10px;
+  border-radius: 15px;
+  transition: all 0.1s ease-in-out;
+}
+
+#tbr a:hover {
+    color: #feada6;
+  }
+
+
 .button {
   background-image: linear-gradient(
     to right,
@@ -27,24 +39,23 @@ body {
   text-decoration: none;
 }
 
-
 #aside {
-    background-color: #abbaab;
-    opacity: 75%;
-    border-radius: 15px;
+  background-color: #abbaab;
+  opacity: 75%;
+  border-radius: 15px;
 }
 
-input[type=text] {
-    border-radius: 10px;
-    width: 300px;
+input[type="text"] {
+  border-radius: 10px;
+  width: 300px;
 }
 
-input[type=text]:focus {
-    background-color: #d4adc4;
-  }
+input[type="text"]:focus {
+  background-color: #feada6;
+}
 
-  #book-div,
-  #random-div {
+#book-div,
+#random-div {
   background-color: #abbaab;
   opacity: 75%;
   border-radius: 15px;
@@ -53,13 +64,13 @@ input[type=text]:focus {
 }
 
 .card {
-    background-color: #085467;
-    margin-bottom: 10px;
-    opacity: 75%;
-    border-radius: 15px;
-    margin: 20px;
-    font-size: 1rem;
-    display: flex;
-  }
+  background-color: #085467;
+  margin-bottom: 10px;
+  opacity: 75%;
+  border-radius: 15px;
+  margin: 20px;
+  font-size: 1rem;
+  display: flex;
+}
 
-  /* change once can see JS effects */
+/* change once can see JS effects */
