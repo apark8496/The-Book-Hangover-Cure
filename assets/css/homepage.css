@@ -50,6 +50,12 @@ body {
   text-decoration: none;
 }
 
+#search-div {
+  background-color: #abbaab;
+  opacity: 75%;
+  border-radius: 15px;
+}
+
 input[type="text"] {
   border-radius: 10px;
   width: 300px;
