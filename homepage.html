@@ -16,10 +16,10 @@
     <!-- Navigation Bar -->
     <section class="hero is medium is bold">
         <header class="header">
-            <nav class="navbar is-transparent">
+            <nav class="navbar">
                 <div class="container m-3">
                     <div class="navbar-brand">
-                        <a class="navbar-item title is-3" href="#">The Book Hangover Cure</a>
+                        <a class="navbar-item title is-size-3" id="logo" href="#">The Book Hangover Cure</a>
                     </div>
                     <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
@@ -53,7 +53,7 @@
                                 <input class="input" id="search" type="text" placeholder="Search by Book Title" />
                             </div>
                             <div class="control">
-                                <button class="button is-link is-light" id="searchBtn">
+                                <button class="button" id="searchBtn">
                                     Search
                                 </button>
                             </div>
@@ -61,8 +61,8 @@
                         <!-- Add Search by Genre Section?-->
                     </div>
 
-                    <!-- Book Title Searched Section -->
-                    <div class="column is-flexible ">
+                    <!-- Book Title Searched Section/ invisible until searched -->
+                    <div class="column is-flexible">
                         <h3 class="book subtitle is-3 has-text-centered" id="book-div">
                             Book Searched
                         </h3>

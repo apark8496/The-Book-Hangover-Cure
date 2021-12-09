@@ -3,6 +3,10 @@ body {
   background-size: cover;
 }
 
+#logo:hover {
+    color: #feada6;
+}
+
 #tbr a {
   background-color: #abbaab;
   padding: 10px 10px;
@@ -35,7 +39,7 @@ body {
 
 .button:hover {
   background-position: right center;
-  color: #fff;
+  color: #feada6;
   text-decoration: none;
 }
 
