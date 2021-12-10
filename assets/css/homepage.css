@@ -50,6 +50,12 @@ body {
   text-decoration: none;
 }
 
+#search-div {
+  background-color: #abbaab;
+  opacity: 75%;
+  border-radius: 15px;
+}
+
 input[type="text"] {
   border-radius: 10px;
   width: 300px;
@@ -70,7 +76,7 @@ input[type="text"]:focus {
 }
 
 .card {
-  background-color: #085467;
+  background-color: #feada6;
   margin-bottom: 10px;
   opacity: 75%;
   border-radius: 15px;
