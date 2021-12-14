@@ -61,6 +61,11 @@ function bookSearched(search) {
     console.log(api);
 }
 
+// Function for recommended books
+
+// make buttons to add books to tbr
+// save tbr to local storage --> page for tbr js
+
 function saveSearch(search) {
     if (!searchHistory.includes(search)) {
       searchHistory.push(search);
