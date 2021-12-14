@@ -37,7 +37,13 @@ function bookSearched(search) {
       console.log(data);
       // Card Container
       var bookEl = document.getElementById("book");
-      bookEl.className= "card";
+      bookEl.className= "card row";
+
+      // Book Cover
+      var bookCover = document.createElement("img");
+      bookCover.className = "card";
+      bookCover.setAttribute('src', data.items[0].volumeInfo.imageLinks.thumbnail);
+      console.log(data.items[0].volumeInfo.imageLinks.thumbnail);
 
     // Book Title
       var bookTitle = document.createElement("h3");
@@ -46,15 +52,10 @@ function bookSearched(search) {
       console.log(data.items[0].volumeInfo.title);
 
       // Book Author
-      var cardSubTitle = document.createElement("h5");
-      cardSubTitle.className = "card-header-title has-text-centered";
-      cardSubTitle.textContent = data.items[0].volumeInfo.authors;
+      var bookAuthor = document.createElement("h5");
+      bookAuthor.className = "card-header-title has-text-centered is-size-5";
+      bookAuthor.textContent = data.items[0].volumeInfo.authors;
 
-      // Book Cover
-      var bookCover = document.createElement("img");
-      bookCover.className = "card";
-      bookCover.setAttribute('src', data.items[0].volumeInfo.imageLinks.thumbnail);
-      console.log(data.items[0].volumeInfo.imageLinks.thumbnail);
 
       //Book Description
       var description = document.createElement("p");
@@ -62,9 +63,9 @@ function bookSearched(search) {
       description.textContent = data.items[0].volumeInfo.description;
       console.log(data.items[0].volumeInfo.description);
 
-      bookEl.appendChild(bookTitle);
-      bookEl.appendChild(cardSubTitle);
       bookEl.appendChild(bookCover);
+      bookEl.appendChild(bookTitle);
+      bookEl.appendChild(bookAuthor);
       bookEl.appendChild(description);
     });
   console.log(api);
