@@ -73,8 +73,16 @@ input[type="text"]:focus {
   opacity: 75%;
   border-radius: 15px;
   margin: 20px;
-  font-size: 1rem;
+  font-size: 1.3vw;
   display: flex;
 }
 
+#history {
+font-weight: 600;
+font-size: 1vw;
+}
+
+#history li {
+padding: 5px;
+}
 /* change once can see JS effects */
