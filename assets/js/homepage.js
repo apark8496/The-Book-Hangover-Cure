@@ -35,40 +35,48 @@ function bookSearched(search) {
     .then(response => response.json())
     .then((data) => {
       console.log(data);
+
       // Card Container
       var bookEl = document.getElementById("book");
-      bookEl.className= "card row";
+      bookEl.className = "";
+
+      // Book Title
+      var bookTitle = document.createElement("h3");
+      bookTitle.className = "card-header-title is-size-3";
+      bookTitle.textContent = data.items[0].volumeInfo.title;
+      // console.log(data.items[0].volumeInfo.title);
+
+      var cardContainer = document.createElement("div");
+      cardContainer.className = "card";
+
+      var card = document.createElement("div");
+      card.className = "card-content";
+
+      // Book Author
+      var bookAuthor = document.createElement("h4");
+      bookAuthor.className = "card-header-title is-size-4";
+      bookAuthor.textContent = data.items[0].volumeInfo.authors;
 
       // Book Cover
       var bookCover = document.createElement("img");
-      bookCover.className = "card";
+      bookCover.className = "card-image m-3 p-2";
       bookCover.setAttribute('src', data.items[0].volumeInfo.imageLinks.thumbnail);
-      console.log(data.items[0].volumeInfo.imageLinks.thumbnail);
+      // console.log(data.items[0].volumeInfo.imageLinks.thumbnail);
 
-    // Book Title
-      var bookTitle = document.createElement("h3");
-      bookTitle.className = "card-header-title has-text-centered";
-      bookTitle.textContent = data.items[0].volumeInfo.title;
-      console.log(data.items[0].volumeInfo.title);
-
-      // Book Author
-      var bookAuthor = document.createElement("h5");
-      bookAuthor.className = "card-header-title has-text-centered is-size-5";
-      bookAuthor.textContent = data.items[0].volumeInfo.authors;
-
-
-      //Book Description
+      //Book Description (try to show synopsis only)
       var description = document.createElement("p");
-      description.className = "card-content is-size-7"
+      description.className = "card-text is-size-6";
       description.textContent = data.items[0].volumeInfo.description;
-      console.log(data.items[0].volumeInfo.description);
+      // console.log(data.items[0].volumeInfo.description);
 
-      bookEl.appendChild(bookCover);
-      bookEl.appendChild(bookTitle);
-      bookEl.appendChild(bookAuthor);
-      bookEl.appendChild(description);
+      card.appendChild(bookTitle);
+      card.appendChild(bookAuthor);
+      card.appendChild(bookCover);
+      card.appendChild(description);
+      cardContainer.appendChild(card);
+      bookEl.appendChild(cardContainer);
     });
-  console.log(api);
+  // console.log(api);
 }
 
 // Function for recommended books
