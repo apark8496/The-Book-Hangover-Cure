@@ -48,6 +48,9 @@ function bookSearched(search) {
             bookImage.setAttribute('src',data.items[0].volumeInfo.imageLinks.thumbnail);
             console.log(data.items[0].volumeInfo.imageLinks.thumbnail);
             //createing a link to the Novel decsription next
+            var disc = document.createTextNode(data.items[0].volumeInfo.description);
+            console.log(data.items[0].volumeInfo.description);
+
 
             var card = document.createElement("div");
             card.className = "card-body";
@@ -58,10 +61,12 @@ function bookSearched(search) {
             synopsis.textContent = "Synopsis:" + data.description;
 
             
-            
+        
             bookEl.appendChild(cardTitle);
             bookEl.appendChild(bookImage);
+            
             console.log(bookImage);
+            bookEl.appendChild(disc);
             });
     console.log(api);
 }
