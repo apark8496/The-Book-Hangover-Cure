@@ -65,7 +65,15 @@ input[type="text"]:focus {
   background-color: #feada6;
 }
 
-/* Book Search Result Section */
+#history {
+  font-weight: 600;
+  font-size: 1vw;
+  }
+  
+  #history li {
+  padding: 5px;
+  }
+
 #book-div,
 #random-div {
   background-color: #abbaab;
@@ -81,8 +89,12 @@ input[type="text"]:focus {
   opacity: 75%;
   border-radius: 15px;
   margin: 20px;
-  font-size: 1rem;
   display: flex;
+}
+
+.card img {
+  max-height: 300px;
+  max-width: 200px;
 }
 
 /* change once can see JS effects */
