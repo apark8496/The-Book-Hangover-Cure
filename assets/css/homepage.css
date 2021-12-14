@@ -51,7 +51,7 @@ body {
 
 input[type="text"] {
   border-radius: 10px;
-  width: 300px;
+  width: 400px;
 }
 
 input[type="text"]:focus {
@@ -63,7 +63,7 @@ input[type="text"]:focus {
   font-size: 1vw;
   }
   
-  #history li {
+#history li {
   padding: 5px;
   }
 
@@ -82,12 +82,15 @@ input[type="text"]:focus {
   opacity: 75%;
   border-radius: 15px;
   margin: 20px;
-  display: flex;
 }
 
 .card img {
   max-height: 300px;
   max-width: 200px;
+  width: 50%;
 }
 
+.card p {
+  font-weight: 500;  
+}
 /* change once can see JS effects */
