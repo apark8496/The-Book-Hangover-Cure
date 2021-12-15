@@ -29,6 +29,7 @@ function handleSearchClick() {
 function bookSearched(search) {
   var getBook = document.getElementById("book-div");
   getBook.className = "has-text-centered is-size-3";
+  $('#book').empty();
 
   var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${search}&intitle`;
 
@@ -40,6 +41,8 @@ function bookSearched(search) {
       // Card Container
       var bookEl = document.getElementById("book");
       bookEl.className = "";
+
+      
 
       // Book Title
       var bookTitle = document.createElement("h3");
@@ -97,7 +100,7 @@ function recommendedBook(search) {
        console.log(data);
 
 // for loop to show max 5 books
-  for (let i=1; i <= 5; i++) {
+  for (let i = 1; i <= 5; i++) {
   
       // Card Container
       var recbookEl = document.getElementById("random");
