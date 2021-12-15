@@ -19,6 +19,7 @@ function handleSearchClick() {
     bookSearched(search);
 
     saveSearch(search);
+    recommendedBook(search);
     renderSearch();
 
     document.getElementById("search").value = "";
@@ -29,9 +30,9 @@ function bookSearched(search) {
   var getBook = document.getElementById("book-div");
   getBook.className = "has-text-centered is-size-3";
 
-  var api = `https://www.googleapis.com/books/v1/volumes?q=${search}&intitle`;
+  var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${search}&intitle`;
 
-  fetch(api)
+  fetch(bookApi)
     .then(response => response.json())
     .then((data) => {
       console.log(data);
@@ -81,64 +82,64 @@ function bookSearched(search) {
 
 // Function for recommended books
 
-// function recommendedBook(search) {
-// var similarBookEl = document.getElementById("random-div");
-// similarBookEl.className = "has-text-centered is-size-3";
+function recommendedBook(search) {
+ var similarBookEl = document.getElementById("random-div");
+ similarBookEl.className = "has-text-centered is-size-3";
 
-//   var randomBook = document.getElementById("random");
-//   randomBook.innerHTML = "";
+   
 
-//   // var api = "";
+   var recApi = `https://www.googleapis.com/books/v1/volumes?q=${search}&intitle`;
 
-//   fetch(api)
-//     .then(response => response.json())
-//     .then((data) => {
-  // var suggestionEl = document.getElementById("random");
-//       console.log(data);
+   fetch(recApi)
+     .then(response => response.json())
+     .then((data) => {
+   var suggestionEl = document.getElementById("random");
+       console.log(data);
 
 // for loop to show max 5 books
-// for var(i=0; i<);
+  for (i=0; i<= 5; i++);
+  
+      // Card Container
+      var recbookEl = document.getElementById("random");
+      recbookEl.className = "";
 
-// Card Container
+      // Book Title
+      var recbookTitle = document.createElement("h3");
+      recbookTitle.className = "card-header-title is-size-3";
+      recbookTitle.textContent = data.items[i].volumeInfo.title;
+      // console.log(data.items[0].volumeInfo.title);
 
-// // Book Title
-// var bookTitle = document.createElement("h3");
-// bookTitle.className = "card-header-title is-size-3";
-// bookTitle.textContent = data.items[0].volumeInfo.title;
-// // console.log(data.items[0].volumeInfo.title);
+      var reccardContainer = document.createElement("div");
+      reccardContainer.className = "card";
 
-// var cardContainer = document.createElement("div");
-// cardContainer.className = "card";
+      var reccard = document.createElement("div");
+      reccard.className = "card-content";
 
-// var card = document.createElement("div");
-// card.className = "card-content";
+      // Book Author
+      var recbookAuthor = document.createElement("h4");
+      recbookAuthor.className = "card-header-title is-size-4";
+      recbookAuthor.textContent = data.items[i].volumeInfo.authors;
 
-// // Book Author
-// var bookAuthor = document.createElement("h4");
-// bookAuthor.className = "card-header-title is-size-4";
-// bookAuthor.textContent = data.items[0].volumeInfo.authors;
+      // Book Cover
+      var recbookCover = document.createElement("img");
+      recbookCover.className = "card-image m-3 p-2";
+      recbookCover.setAttribute('src', data.items[i].volumeInfo.imageLinks.thumbnail);
+      // console.log(data.items[0].volumeInfo.imageLinks.thumbnail);
 
-// // Book Cover
-// var bookCover = document.createElement("img");
-// bookCover.className = "card-image m-3 p-2";
-// bookCover.setAttribute('src', data.items[0].volumeInfo.imageLinks.thumbnail);
-// // console.log(data.items[0].volumeInfo.imageLinks.thumbnail);
+      //Book Description (try to show synopsis only)
+      var recdescription = document.createElement("p");
+      recdescription.className = "card-text is-size-6";
+      recdescription.textContent = data.items[i].volumeInfo.description;
+      // console.log(data.items[0].volumeInfo.description);
 
-// //Book Description (try to show synopsis only)
-// var description = document.createElement("p");
-// description.className = "card-text is-size-6";
-// description.textContent = data.items[0].volumeInfo.description;
-// // console.log(data.items[0].volumeInfo.description);
-
-// card.appendChild(bookTitle);
-// card.appendChild(bookAuthor);
-// card.appendChild(bookCover);
-// card.appendChild(description);
-// cardContainer.appendChild(card);
-// bookEl.appendChild(cardContainer);
-// });
-// // console.log(api);
-// }
+      reccard.appendChild(recbookTitle);
+      reccard.appendChild(recbookAuthor);
+      reccard.appendChild(recbookCover);
+      reccard.appendChild(recdescription);
+      reccardContainer.appendChild(reccard);
+      recbookEl.appendChild(reccardContainer);
+     });
+}
 
 // make buttons to add books to tbr
 // save tbr to local storage --> page for tbr js
