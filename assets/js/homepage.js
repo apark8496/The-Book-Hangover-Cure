@@ -97,7 +97,7 @@ function recommendedBook(search) {
        console.log(data);
 
 // for loop to show max 5 books
-  for (i=0; i<= 5; i++);
+  for (let i=1; i <= 5; i++) {
   
       // Card Container
       var recbookEl = document.getElementById("random");
@@ -138,6 +138,7 @@ function recommendedBook(search) {
       reccard.appendChild(recdescription);
       reccardContainer.appendChild(reccard);
       recbookEl.appendChild(reccardContainer);
+  }
      });
 }
 
