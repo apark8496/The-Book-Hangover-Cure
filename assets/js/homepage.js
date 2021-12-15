@@ -88,7 +88,7 @@ function bookSearched(search) {
 function recommendedBook(search) {
  var similarBookEl = document.getElementById("random-div");
  similarBookEl.className = "has-text-centered is-size-3";
-
+  $('#random').empty();
    
 
    var recApi = `https://www.googleapis.com/books/v1/volumes?q=${search}&intitle`;
