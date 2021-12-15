@@ -44,6 +44,10 @@ body {
   border: none;
 }
 
+.clearBtn {
+  margin: 10px;
+}
+
 .button:hover {
   background-position: right center;
   color: #feada6;
@@ -95,6 +99,7 @@ input[type="text"]:focus {
 .card img {
   max-height: 300px;
   max-width: 200px;
+  width: 50%;
 }
 
 /* change once can see JS effects */
