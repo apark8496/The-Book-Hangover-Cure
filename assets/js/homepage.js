@@ -20,6 +20,7 @@ function handleSearchClick() {
     recommendedBook(search);
 
     saveSearch(search);
+    recommendedBook(search);
     renderSearch();
 
     document.getElementById("search").value = "";
@@ -30,6 +31,7 @@ function handleSearchClick() {
 function bookSearched(search) {
   var getBook = document.getElementById("book-div");
   getBook.className = "has-text-centered is-size-3";
+  $('#book').empty();
 
   var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${search}&intitle`;
 
@@ -41,6 +43,8 @@ function bookSearched(search) {
       // Card Container
       var bookEl = document.getElementById("book");
       bookEl.className = "";
+
+      
 
       // Book Title
       var bookTitle = document.createElement("h3");
@@ -88,6 +92,7 @@ function bookSearched(search) {
 function recommendedBook(search) {
   var similarBookEl = document.getElementById("random-div");
   similarBookEl.className = "has-text-centered is-size-3";
+  $('#random').empty();
 
   var recApi = `https://www.googleapis.com/books/v1/volumes?q=${search}`;
 
@@ -141,7 +146,6 @@ function recommendedBook(search) {
       }
     });
 }
-
 
 // make buttons to add books to tbr
 // save tbr to local storage --> page for tbr js
