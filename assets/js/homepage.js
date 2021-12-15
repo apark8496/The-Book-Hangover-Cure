@@ -42,9 +42,7 @@ function bookSearched(search) {
 
       // Card Container
       var bookEl = document.getElementById("book");
-      bookEl.className = "";
-
-      
+      bookEl.className = ""; 
 
       // Book Title
       var bookTitle = document.createElement("h3");
@@ -69,6 +67,10 @@ function bookSearched(search) {
       bookCover.setAttribute('src', data.items[0].volumeInfo.imageLinks.thumbnail);
       // console.log(data.items[0].volumeInfo.imageLinks.thumbnail);
 
+      var tags = document.createElement("p")
+      tags.classList = "card-text tag m-2"
+      tags.textContent = data.items[0].volumeInfo.categories;
+
       //Book Synopsis
       var description = document.createElement("p");
       description.className = "card-text is-size-6";
@@ -76,12 +78,14 @@ function bookSearched(search) {
       // console.log(data.items[0].volumeInfo.description);
 
 
-      // Add in API for Drink REC
+      // Add in API fetch for Drink REC
       
       card.appendChild(bookTitle);
       card.appendChild(bookAuthor);
       card.appendChild(bookCover);
+      card.appendChild(tags);
       card.appendChild(description);
+      // append drink to card element
       cardContainer.appendChild(card);
       bookEl.appendChild(cardContainer);
     });
@@ -94,7 +98,7 @@ function recommendedBook(search) {
   similarBookEl.className = "has-text-centered is-size-3";
   $('#random').empty();
 
-  var recApi = `https://www.googleapis.com/books/v1/volumes?q=${search}`;
+  var recApi = `https://www.googleapis.com/books/v1/volumes?q=${search}-inauthor+subject=similar`;
 
   fetch(recApi)
     .then(response => response.json())
@@ -130,7 +134,7 @@ function recommendedBook(search) {
       recBookCover.className = "card-image m-3 p-2";
       recBookCover.setAttribute('src', data.items[i].volumeInfo.imageLinks.thumbnail);
       // console.log(data.items[0].volumeInfo.imageLinks.thumbnail);
-
+  
       // Book Synopsis
       var recDescription = document.createElement("p");
       recDescription.className = "card-text is-size-6";
