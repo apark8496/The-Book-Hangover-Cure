@@ -171,3 +171,8 @@ function searchList() {
 }
 
 // Make a button to clear Search History
+$(".clearBtn").on("click", function(event) {
+  event.preventDefault();
+  localStorage.clear();
+  location.reload();
+});
