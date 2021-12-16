@@ -67,6 +67,10 @@ function bookSearched(search) {
       bookCover.setAttribute('src', data.items[0].volumeInfo.imageLinks.thumbnail);
       // console.log(data.items[0].volumeInfo.imageLinks.thumbnail);
 
+      var rating = document.createElement("h4");
+      rating.className = "card-header-title is-size-6";
+      rating.textContent = "Average Rating: " + data.items[0].volumeInfo.averageRating;
+
       var tags = document.createElement("p")
       tags.classList = "card-text tag m-2"
       tags.textContent = data.items[0].volumeInfo.categories;
@@ -83,6 +87,7 @@ function bookSearched(search) {
       card.appendChild(bookTitle);
       card.appendChild(bookAuthor);
       card.appendChild(bookCover);
+      card.appendChild(rating);
       card.appendChild(tags);
       card.appendChild(description);
       // append drink to card element
@@ -134,6 +139,10 @@ function recommendedBook(search) {
       recBookCover.className = "card-image m-3 p-2";
       recBookCover.setAttribute('src', data.items[i].volumeInfo.imageLinks.thumbnail);
       // console.log(data.items[0].volumeInfo.imageLinks.thumbnail);
+
+      var recRating = document.createElement("h4");
+      recRating.className = "card-header-title is-size-6";
+      recRating.textContent = "Average Rating: " + data.items[i].volumeInfo.averageRating;
   
       // Book Synopsis
       var recDescription = document.createElement("p");
@@ -144,6 +153,7 @@ function recommendedBook(search) {
       recCard.appendChild(recBookTitle);
       recCard.appendChild(recBookAuthor);
       recCard.appendChild(recBookCover);
+      recCard.appendChild(recRating);
       recCard.appendChild(recDescription);
       recCardContainer.appendChild(recCard);
       recBookEl.appendChild(recCardContainer);
