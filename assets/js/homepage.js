@@ -1,4 +1,5 @@
 var apiKey = "AIzaSyAnfcU8J4T1O6l-q3o2pGotNokYO1BQCMw";
+var tbrBtnEl = document.querySelector("#readLater");
 
 var searchHistory;
 if (JSON.parse(localStorage.getItem("history")) != null)
@@ -73,14 +74,27 @@ function bookSearched(search) {
       description.textContent = data.items[0].volumeInfo.description;
       // console.log(data.items[0].volumeInfo.description);
 
+      var saveButton = document.createElement("button");
+      saveButton.type = "button";
+      saveButton.className = "readLater";
+      
+
+      
+
       card.appendChild(bookTitle);
       card.appendChild(bookAuthor);
       card.appendChild(bookCover);
       card.appendChild(description);
+      card.appendChild(saveButton);
       cardContainer.appendChild(card);
       bookEl.appendChild(cardContainer);
+
+      $(document).on("click", ".readLater", function() {
+        console.log(this);
+      });
     });
   // console.log(api);
+  
 }
 
 // Function for recommended books
@@ -155,6 +169,8 @@ function saveSearch(search) {
   }
 }
 
+
+
 function renderSearch() {
   while (document.getElementById("history").firstChild) {
     document.getElementById("history").removeChild(document.getElementById("history").firstChild);
@@ -170,9 +186,14 @@ function searchList() {
 
     historyItem.addEventListener("click", function (event) {
       bookSearched(event.target.textContent);
+      recommendedBook(event.target.textContent);
     });
     document.getElementById("history").appendChild(historyItem);
   });
+}
+
+function storeFavBook() {
+  console.log("yum");
 }
 
 // Make a button to clear Search History
@@ -181,3 +202,5 @@ $(".clearBtn").on("click", function(event) {
   localStorage.clear();
   location.reload();
 });
+
+
