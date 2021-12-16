@@ -98,15 +98,15 @@ function recommendedBook(search) {
   similarBookEl.className = "has-text-centered is-size-3";
   $('#random').empty();
 
-  var recApi = `https://www.googleapis.com/books/v1/volumes?q=${search}-inauthor+subject=similar`;
+  var recApi = `https://www.googleapis.com/books/v1/volumes?q=${search}-inauthor&-intitle`;
 
   fetch(recApi)
     .then(response => response.json())
     .then((data) => {
       console.log(data);
 
-      // for loop to show max 5 books
-      for (i = 1; i <= 5; i++) {
+      // for loop to show max 10 books
+      for (i = 1; i <= 10; i++) {
 
       // Card Container
       var recBookEl = document.getElementById("random");
