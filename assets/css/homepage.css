@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-image: url(https://cdn.pixabay.com/photo/2019/06/12/23/56/time-4270427_960_720.jpg);
   background-size: cover;
