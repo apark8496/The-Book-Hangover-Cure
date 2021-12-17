@@ -17,10 +17,9 @@ function handleSearchClick() {
   if (document.getElementById("search").value !== "") {
 
     bookSearched(search);
-    //recommendedBook(search);
+    recommendedBook(search);
 
     saveSearch(search);
-    recommendedBook(search);
     renderSearch();
 
     document.getElementById("search").value = "";
