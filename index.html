@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The Book Hangover Cure: Book Generator</title>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="assets\css\homepage.css" />
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <main class="hero is-large" id="main">
+        <header class="header hero-head">
+            <nav class="navbar" role="navigation">
+                <div class="container m-3">
+                    <div class="navbar-brand">
+                        <a class="navbar-item title is-size-3 mx-2" id="logo" href="#">The Book Hangover Cure</a>
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item" id="tbr">
+                        <a href="tbr.html" class="subtitle is-5">To be Read Library</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Navigation end -->
+
+        <!-- Main  Content -->
+        <div class="hero-body">
+            <div class="row">
+                <div class="columns">
+                    <!-- Search for book section -->
+                    <aside class="column is-one-third" id="search-div">
+                        <p class="subtitle is-2">
+                            Looking for a new book to cure your book hangover?
+                        </p>
+                        <p class="is-size-4">A New Adventure Awaits:</p>
+                        <div class="field has-addons p-3 m-3" id="searchBar">
+                            <div class="control">
+                                <input class="input" id="search" type="text" placeholder="Search by Book Title" />
+                            </div>
+                            <div class="control">
+                                <button class="button" id="searchBtn">Search</button>
+                            </div>
+                        </div>
+                        <!-- Future Task: Add Search by Genre Section-->
+                        <h4 class="subtitle is-5">Search History:</h4>
+                        <div class="history">
+                            <ul class="is-grouped-multiline history" id="history"></ul>
+                            <button class="button clearBtn" id="clear">Clear</button>
+                        </div>
+                        <div class= "drink">
+                            <h4 class="subtitle is-4" id="drink-div">Need a Stronger Cure? Get a Drink Recommendation:</h4>
+                            <div id="drink"></div>
+                        </div>
+                    </aside>
+                       
+                    <!-- Book Searched/Random Section/ invisible until searched -->
+                    <aside class="column is-flexible">
+                        <h3 class="book subtitle is-3 has-text-centered" id="book-div">
+                            Explore the World of:
+                        </h3>
+                        <div id="book"></div>
+                        <!-- card element make with JS -->
+
+                        <!-- Generated random Related Book Section -->
+                        <h3 class="random subtitle is-size-3 has-text-centered" id="random-div">
+                            A New World Awaits: </h3>
+                        <div id="random"></div>
+                        <!-- card element make with JS -->
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/js/homepage.js"></script>
+</body>
+
+</html>
