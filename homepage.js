@@ -22,6 +22,8 @@ function handleSearchClick() {
     saveSearch(search);
     recommendedBook(search);
     renderSearch();
+    DrinkClick("vodka");
+  
 
     document.getElementById("search").value = "";
   }
@@ -98,15 +100,15 @@ function recommendedBook(search) {
   similarBookEl.className = "has-text-centered is-size-3";
   $('#random').empty();
 
-  var recApi = `https://www.googleapis.com/books/v1/volumes?q=${search}-inauthor+subject=similar`;
+  var recApi = `https://www.googleapis.com/books/v1/volumes?q=${search}-inauthor&-intitle`;
 
   fetch(recApi)
     .then(response => response.json())
     .then((data) => {
       console.log(data);
 
-      // for loop to show max 5 books
-      for (i = 1; i <= 5; i++) {
+      // for loop to show max 10 books
+      for (i = 1; i <= 10; i++) {
 
       // Card Container
       var recBookEl = document.getElementById("random");
@@ -152,22 +154,66 @@ function recommendedBook(search) {
 }
 
 
+
 // recommended drink with your api
 
-fetch("https://the-cocktail-db.p.rapidapi.com/random.php", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-		"x-rapidapi-key": "93774ee794msh62787626de1afe0p107dbejsn77b95a3a493e"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
-});
+var DrinkClick = function (drinkChoice) {
+  getDrinkID(drinkChoice)
+}
 
+var getDrinkID = function (liquor) {
+  var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + liquor
+  fetch(apiUrl)
+      .then(function (response) {
+          if (response.ok) {
+              response.json().then(function (data) {
+                  var randomNumber = Math.floor(Math.random() * data.drinks.length)
+                  var drinkName = data.drinks[randomNumber].strDrink
+                  console.log(data);
+                  console.log(drinkName);
+
+   
+
+
+    //Image creation
+    var drinkPic = document.createElement("Img");
+    drinkPic.className = ("cardImageDrink");
+    drinkPic.setAttribute('src', data.drinks[randomNumber].strDrinkThumb);
+    console.log(data.drinks[randomNumber].strDrinkThumb);
+
+    var drinkEl= document.getElementById("book");
+    drinkEl.appendChild(drinkPic);
+
+
+          //creating message for drink
+
+          var recDrink = document.createElement("h3");
+          recDrink.className = "card-header-title is-size-3";
+           
+          recDrink.textContent = "Recommended Drink With Your Novel.";
+          console.log(recDrink);
+          
+         drinkEl.appendChild(recDrink);      
+
+      //drinkTitle
+
+    var drinkTitle = document.createElement("h3");
+      drinkTitle.className = "card-header-title is-size-3";
+
+      drinkTitle.textContent = data.drinks[randomNumber].strDrink;
+      console.log(data.drinks[randomNumber].strDrink);
+
+    drinkEl.appendChild(drinkTitle)
+
+
+
+
+              })
+          }
+      })
+}
+
+  
 // make buttons to add books to tbr
 // save tbr to local storage --> page for tbr js
 
@@ -205,4 +251,3 @@ $(".clearBtn").on("click", function(event) {
   localStorage.clear();
   location.reload();
 });
-;
