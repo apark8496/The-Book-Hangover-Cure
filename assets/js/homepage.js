@@ -94,6 +94,7 @@ function bookSearched(search) {
         var count = $("#count");
         localStorage.setItem('container',JSON.stringify(data.items[0]));
         $(count).html(function(i, val) { return +val+1 });  
+        savefav();
       });
     });
   // console.log(api);

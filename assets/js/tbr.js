@@ -3,7 +3,7 @@ window.onload = function() {
     var name=localStorage.getItem("container");
 
     //document.getElementById("to-read").innerHTML = name;
-    $(count).html(function(i, val) { return +val+1 }); 
+    //$(count).html(function(i, val) { return +val+1 }); 
    
     savefav();
 
