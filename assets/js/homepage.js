@@ -1,3 +1,4 @@
+var tbrBtnEl = document.querySelector("#readLater");
 
 // Load Previous Search History on load
 var searchHistory;
@@ -123,14 +124,28 @@ function bookSearched(search) {
       description.textContent = data.items[0].volumeInfo.description;
       // console.log(data.items[0].volumeInfo.description);
 
+      var saveButton = document.createElement("button");
+      saveButton.type = "button";
+      saveButton.className = "button readLater";
+      saveButton.textContent = "Save to library"
+
       card.appendChild(bookTitle);
       card.appendChild(bookAuthor);
       card.appendChild(bookCover);
       card.appendChild(rating);
       card.appendChild(tags);
       card.appendChild(description);
+      card.appendChild(saveButton);
       cardContainer.appendChild(card);
       bookEl.appendChild(cardContainer);
+
+      $(document).on("click", ".readLater", function() {
+        console.log("this");
+        var count = $("#count");
+        localStorage.setItem('container',JSON.stringify(data.items[0]));
+        $(count).html(function(i, val) { return +val+1 });  
+        savefav();
+      });
     });
 }
 
@@ -185,7 +200,7 @@ function recommendedBook(search) {
         var recDescription = document.createElement("p");
         recDescription.className = "card-text is-size-6";
         recDescription.textContent = data.items[i].volumeInfo.description;
-        // console.log(data.items[0].volumeInfo.description);
+        // console.log(data.items[0].volumeInfo.description);     
 
         recCard.appendChild(recBookTitle);
         recCard.appendChild(recBookAuthor);
