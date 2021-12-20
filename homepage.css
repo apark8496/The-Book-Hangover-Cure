@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+.cardImageDrink {
+width: 250px;
+height: 250px;
+border-radius: 100px;
+background-color: #feada6;
+opacity: 75%;
+display: flex;
+}
+
+body {
+  background-image: url(https://cdn.pixabay.com/photo/2019/06/12/23/56/time-4270427_960_720.jpg);
+  background-size: cover;
+}
+
+/* header Styles */
+#logo:hover {
+  color: #feada6;
+}
+
+#tbr a {
+  background-color: #abbaab;
+  padding: 10px 10px;
+  border-radius: 15px;
+  transition: all 0.1s ease-in-out;
+}
+
+#tbr a:hover {
+  color: #feada6;
+}
+
+/* Search Section Style */
+#aside {
+  background-color: #abbaab;
+  opacity: 75%;
+  border-radius: 15px;
+}
+
+.button {
+  background-image: linear-gradient(
+    to right,
+    #abbaab 0%,
+    #ffffff 51%,
+    #abbaab 100%
+  );
+}
+
+.button {
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 5px;
+  display: block;
+  border: none;
+}
+
+.clearBtn {
+  margin: 10px;
+}
+
+.button:hover {
+  background-position: right center;
+  color: #feada6;
+  text-decoration: none;
+}
+
+#search-div {
+  background-color: #abbaab;
+  opacity: 75%;
+  border-radius: 15px;
+}
+
+input[type="text"] {
+  border-radius: 10px;
+  width: 300px;
+}
+
+input[type="text"]:focus {
+  background-color: #feada6;
+}
+
+#history {
+  font-weight: 600;
+  font-size: 1vw;
+  }
+  
+  #history li {
+  padding: 5px;
+  }
+
+#book-div,
+#random-div {
+  background-color: #abbaab;
+  opacity: 75%;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 30px;
+}
+
+.card {
+  background-color: #feada6;
+  margin-bottom: 10px;
+  opacity: 75%;
+  border-radius: 15px;
+  margin: 20px;
+  display: flex;
+}
+
+.card img {
+  max-height: 300px;
+  max-width: 200px;
+  width: 50%;
+}
+
+/* change once can see JS effects */
