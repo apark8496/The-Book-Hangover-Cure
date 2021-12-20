@@ -90,7 +90,10 @@ function bookSearched(search) {
       bookEl.appendChild(cardContainer);
 
       $(document).on("click", ".readLater", function() {
-        console.log(this);
+        console.log("this");
+        var count = $("#count");
+        localStorage.setItem('container',JSON.stringify(data.items[0]));
+        $(count).html(function(i, val) { return +val+1 });  
       });
     });
   // console.log(api);
@@ -192,15 +195,19 @@ function searchList() {
   });
 }
 
-function storeFavBook() {
-  console.log("yum");
-}
+
 
 // Make a button to clear Search History
 $(".clearBtn").on("click", function(event) {
   event.preventDefault();
-  localStorage.clear();
+  localStorage.removeItem("history");
   location.reload();
 });
+
+
+//create function to save books
+
+
+
 
 
