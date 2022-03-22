@@ -22,7 +22,7 @@ As an added bonus when searching, a drink to try while reading their chosen book
 
 ![tbr](https://github.com/adunderwood96/a-novel-idea/blob/a999f36697fc72e4d5c09883c78ae604aa112fb3/assets/images/tbr.png);
 
-### Site Location: https://adunderwood96.github.io/a-novel-idea/
+### Site Location: https://apark8496.github.io/a-novel-idea/
 
 #### Contributors:
 - Ashley: HTML/CSS/JS(book search)
